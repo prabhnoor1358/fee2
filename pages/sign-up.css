@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+
+body{
+    background-color: #021c4d;
+    color: white;
+}
+
+.do-you-know,.form{
+    display: inline-block;
+}
+
+.do-you-know{
+    width: 40%;
+    font-size: small;
+    text-align: center;
+    vertical-align: top;
+}
+
+.do-you-know img{
+    margin-top: 80px;
+    display: block;
+    height:300px;
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form{
+    padding: 30px;
+    width:45%;
+    height:550px;
+    margin: 20px 30px;
+    /* border: 2px solid black; */
+    border-radius: 25px;
+    text-align: center;
+    background-color: #314c81;
+}
+
+form h1{
+    font-weight: bolder;
+}
+
+.form p{
+    text-align: left;
+}
+
+.form input{
+    background-color: #314c81;
+    color: #fff;
+    width: 90%;
+    height: 20px;
+    border:none;
+    outline: none;
+}
+
+input[type="submit"]{
+    height:35px;
+    width: 100px;
+    margin-top: 30px;
+    border-radius: 3px;
+    background-color: rgb(161, 3, 3);
+}
+
+
+@media only screen and (max-width: 870px) {
+    .do-you-know, .form {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .form{
+        width: 80%;
+    }
+
+    .do-you-know {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .do-you-know > img{
+        width: 50vw;
+        height: 50vw;
+        margin-top: 0;
+        margin-right: 45vw;
+    }
+
+    p{
+        margin-top: 2vw;
+    }
+}
