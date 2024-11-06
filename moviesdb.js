@@ -205,9 +205,88 @@ for (let element in movies) {
     select.appendChild(tempEle);
 }
 
-
-
 window.addEventListener('DOMContentLoaded', () => {
     ticketPrice = +movieSelect.value;
 });
 
+
+let searchBtn = document.querySelector('#search');
+
+searchBtn.addEventListener('click',()=>{
+    let query = document.querySelector('#query').value;
+    const apiUrl = `http://simpleapi.traileraddict.com/${query}/trailer`;
+
+    fetch(apiUrl)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.text();
+        })
+        .then(data => {
+            // Convert the XML to JSON
+            const jsonFromXml = xmlToJson(data);
+
+            // Extract the embeddable HTML
+            const embeddableHTML = extractEmbedLink(jsonFromXml);
+            if (embeddableHTML) {
+                // Insert the embeddable <iframe> into the play-trailer div
+                const playTrailerDiv = document.querySelector('.play-trailer');
+                playTrailerDiv.innerHTML += embeddableHTML; // Append the <iframe> to the existing content
+            }
+
+            let tempEle = document.createElement("option");
+            tempEle.value = 180;
+            tempEle.textContent = `${query} (₹${180})`;
+            select.prepend(tempEle);
+        })
+        .catch(error => {
+            const playTrailerDiv = document.querySelector('.play-trailer');
+            playTrailerDiv.innerHTML += error;
+            console.error('Error fetching first API:', error);
+        });
+})
+
+function xmlToJson(xml) {
+    const xmlDoc = (new DOMParser()).parseFromString(xml, "text/xml");
+
+    // Recursive function to process XML nodes
+    function xmlToJsonRecursive(node) {
+        let obj = {};
+
+        if (node.nodeType === 1) { // Element node
+            if (node.attributes.length > 0) {
+                obj["@attributes"] = {};
+                for (let i = 0; i < node.attributes.length; i++) {
+                    const attr = node.attributes[i];
+                    obj["@attributes"][attr.nodeName] = attr.nodeValue;
+                }
+            }
+        }
+
+        if (node.hasChildNodes()) {
+            for (let i = 0; i < node.childNodes.length; i++) {
+                const child = node.childNodes[i];
+                const nodeName = child.nodeName;
+
+                if (child.nodeType === 3) { // Text node
+                    const textContent = child.nodeValue.trim();
+                    if (textContent) {
+                        obj["#text"] = textContent;
+                    }
+                } else if (child.nodeType === 4) { // CDATA node
+                    obj["#cdata"] = child.nodeValue;
+                } else if (child.nodeType === 1) { // Element node
+                    if (!obj[nodeName]) {
+                        obj[nodeName] = [];
+                    }
+                    obj[nodeName].push(xmlToJsonRecursive(child));
+                }
+            }
+        }
+
+        return obj;
+    }
+
+    return xmlToJsonRecursive(xmlDoc.documentElement);
+};
