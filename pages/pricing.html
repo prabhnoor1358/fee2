@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing</title>
+    <link rel="stylesheet" href="./pricing.css">
+</head>
+<body>
+
+    <div id="translateBtn" class="elfsight-app-7de537fe-f9d2-4d78-abbc-f5bfd276d941" data-elfsight-app-lazy></div>
+
+    <main>
+        <div class="payment-methods">
+            <img src="../img/pricing/default.png" id="bankLogo">
+            <h2>Choose Your Bank</h2>
+            <select id="bank">
+                <option value="default">Select</option>
+                <option value="axis">Axis Bank</option>
+                <option value="canara">Canara Bank</option>
+                <option value="idfc">IDFC First Bank</option>
+                <option value="icic">ICIC Bank</option>
+            </select>
+            <h2>Enter your mode of payment</h2>
+            <select id="method">
+                <option value="default">Select</option>
+                <option>Credit Card</option>
+                <option>Debit Card</option>
+                <option>UPI</option>
+                <option>Netbanking</option>
+            </select>
+        </div>
+
+        <div class="payment-box">
+            <h3>We hope you enjoy your movie</h3>
+            <h3>Your Seat No: <span id="seatNo">J104</span></h3>
+            <h3>Price: <span id="totalPayment">₹ 650</span></h3>
+            <img src="../img/pricing/theatre-bg.jpg" id="theatre-bg">
+            <img src="../img/pricing/popcorn-gif.gif" id="popcorn-gif">
+            <button id="payBtn">Pay Now</button>
+        </div>
+    </main>
+
+    <script src="./pricing.js"></script>
+    <script src="../navbar.js"></script>
+    
+    <!--Translate-->
+    <script src="https://static.elfsight.com/platform/platform.js" async></script>    
+
+</body>
+</html>

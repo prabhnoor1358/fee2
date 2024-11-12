@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+
+.navbar{
+    width: 98%;
+    margin: 5px auto;
+}
+
+body{
+    background-color: #021c4d;
+    color: white;
+}
+
+.do-you-know,.form{
+    display: inline-block;
+}
+
+.do-you-know{
+    width: 40%;
+    font-size: small;
+    text-align: center;
+    vertical-align: top;
+}
+
+@keyframes border {
+    0%{
+        box-shadow: 0;
+    }
+    50%{
+        box-shadow: 0 0 60px #4f87f6;
+    }
+    100%{
+        box-shadow: 0;
+    }
+}
+
+.do-you-know > img{
+    animation: border 4s ease-in-out infinite;
+    border-radius: 60%;
+    display: block;
+    height:300px;
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+}
+
+.form{
+    padding: 30px;
+    width:45%;
+    height:550px;
+    margin: 20px 30px;
+    /* border: 2px solid black; */
+    border-radius: 25px;
+    text-align: center;
+    background-color: #314c81;
+}
+
+form h1{
+    font-weight: bolder;
+}
+
+.form p{
+    text-align: left;
+}
+
+.form input{
+    background-color: #314c81;
+    color: #fff;
+    width: 90%;
+    height: 20px;
+    border:none;
+    outline: none;
+}
+
+input[type="submit"]{
+    height:35px;
+    width: 100px;
+    margin-top: 30px;
+    border-radius: 3px;
+    background-color: rgb(161, 3, 3);
+}
+
+#textarea{
+    margin-top: 20px;
+    height: 100px;
+    max-height: 175px;
+    width: 100%;
+    max-width: 100%;
+    outline: none;
+}
+
+@media only screen and (max-width: 870px) {
+    .do-you-know, .form {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .form{
+        width: 80%;
+    }
+
+    .do-you-know {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .do-you-know > img{
+        width: 50vw;
+        height: 50vw;
+        margin-top: 0;
+    }
+
+    p{
+        margin-top: 2vw;
+    }
+}

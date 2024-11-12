@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Seat Booking</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./navbar.css">
+    <meta http-equiv="Permissions-Policy" content="encrypted-media=(self)">
+</head>
+
+<body>
+
+    <div class="play-trailer">
+        <div id="cross"><b onclick="location.reload()">X</b></div>
+    </div>
+
+    <div class="navbar" style="width: 90%;">
+        <div class="expanded-icons">
+            <img id="navbar-logo" src="./img/logo.png">
+            <img src="./img/menuIcon.png" id="menu-icon">
+        </div>
+        <span><a href="./index.html">Home</a></span>
+        <span><a href="./pages/contact-us.html">Contact Us</a></span>
+        <span><a href="./pages/pricing.html">Pricing</a></span>
+        <span id="login-btn"><a href="./pages/login.html">Login</a></span>
+    </div>
+
+    <div id="translateBtn" class="elfsight-app-7de537fe-f9d2-4d78-abbc-f5bfd276d941" data-elfsight-app-lazy></div>
+
+
+    <div class="search">
+        Search A Movie:
+        &nbsp;<input type="text" id="query" placeholder="Search..">
+        <img id="search" src="./img/searchIcon.png">
+    </div>
+
+    <div class="movie-container">
+        <label>Pick a movie:</label>
+        <select id="movie">
+            <option id="jawana" value=" "></option>
+        </select>
+    </div>
+
+    <button id="trailer">Watch Trailer</button>
+
+    <ul class="showcase">
+        <li>
+            <div class="seat"></div>
+            <small>N/A</small>
+        </li>
+        <li>
+            <div class="seat selected"></div>
+            <small>Selected</small>
+        </li>
+        <li>
+            <div class="seat occupied"></div>
+            <small>Occupied</small>
+        </li>
+    </ul>
+
+    <div class="container">
+        <div class="movie-screen">
+            <img src='screen-thumb.png' alt='screen' />
+        </div>
+
+        <div class="row-container">
+            <div class="row">
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+            </div>
+            <div class="row">
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat occupied"></div>
+                <div class="seat occupied"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+            </div>
+            <div class="row">
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat occupied"></div>
+                <div class="seat occupied"></div>
+            </div>
+            <div class="row">
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+            </div>
+            <div class="row">
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat occupied"></div>
+                <div class="seat occupied"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+            </div>
+            <div class="row">
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+            </div>
+            <div class="row">
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat occupied"></div>
+                <div class="seat occupied"></div>
+                <div class="seat occupied"></div>
+                <div class="seat"></div>
+            </div>
+            <div class="text-wrapper">
+                <p class="text">Selected Seats <span id='count'>0</span>
+                <p class="text">Total Price ₹<span id="total">0</span></p>
+            </div>
+        </div>
+
+    </div>
+
+    <button id="pay" onclick="location.replace('./pages/pricing.html')">Pay Now</button>
+
+    <script src='script.js'></script>
+    <script src="./navbar.js"></script>
+    <script src="./moviesdb.js"></script>
+
+    <!--Translate-->
+    <script src="https://static.elfsight.com/platform/platform.js" async></script>
+
+    <script src="trailerApi.js"></script>
+</body>
+
+</html>
