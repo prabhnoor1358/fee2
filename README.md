@@ -7,7 +7,7 @@
 
 A modern cinema seat booking system developed as part of Front End Engineering 2 coursework at Chitkara University (Semester 3).
 
-**Live Demo:** https://prabhnoor1358.github.io/ticket-tango/
+**Live Demo:** https://prabhnoor25.github.io/ticket-tango/
 
 ## Features ✨
 - 🎬 Movie selection from 150+ titles
@@ -39,6 +39,20 @@ movie-booking/
     ├── pricing.html
     └── login.html
 ```
+
+## Screenshots 📸
+
+**Dashboard** 
+
+<img src="screenshots/dashboard.png" style="width: 100%; display: block; margin: 0 auto;">
+
+**Pricing** 
+
+<img src="screenshots/pricing.png" style="width: 100%; display: block; margin: 0 auto;">
+
+**Payment API Integration** 
+
+<img src="screenshots/payment.png" style="width: 100%; display: block; margin: 0 auto;">
 
 ## Installation & Usage 🛠️
 1. Clone repository:
@@ -84,4 +98,4 @@ open index.html
 
 **Developed with ❤️ by Prabhnoor Singh**  
 
-[![GitHub](https://img.shields.io/badge/View_Code-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/prabhnoor1358/ticket-tango)
+[![GitHub](https://img.shields.io/badge/View_Code-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/prabhnoor25/ticket-tango)
